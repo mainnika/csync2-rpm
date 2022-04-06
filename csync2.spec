@@ -19,15 +19,15 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  bison
 BuildRequires:  flex
-BuildRequires:  libgnutls-devel
+BuildRequires:  gnutls-devel
 BuildRequires:  librsync-devel
 BuildRequires:  hostname
 # openssl required at build time due to rpmlint checks which run postinstall script which uses openssl
 BuildRequires:  openssl
 BuildRequires:  pkgconfig
-BuildRequires:  sqlite3-devel
+BuildRequires:  sqlite-devel
 Requires:       openssl
-Requires:       sqlite3
+Requires:       sqlite
 %if 0%{?suse_version} >= 1210 || 0%{?rhel} >= 7
 BuildRequires:  systemd
 %endif
