@@ -20,14 +20,20 @@ BuildRequires:  automake
 BuildRequires:  bison
 BuildRequires:  flex
 BuildRequires:  gnutls-devel
+BuildRequires:  gcc
 BuildRequires:  librsync-devel
 BuildRequires:  hostname
 # openssl required at build time due to rpmlint checks which run postinstall script which uses openssl
 BuildRequires:  openssl
 BuildRequires:  pkgconfig
 BuildRequires:  sqlite-devel
+BuildRequires:  mariadb-connector-c-devel
+BuildRequires:  libpq-devel
 Requires:       openssl
 Requires:       sqlite
+Requires:       mariadb-connector-c
+Requires:       libpq
+
 %if 0%{?rhel} >= 7
 BuildRequires:  systemd
 %endif
