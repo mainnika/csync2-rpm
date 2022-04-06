@@ -93,6 +93,9 @@ fi
 %config(noreplace) %{_sysconfdir}/csync2/csync2.cfg
 
 %changelog
+* Wed Apr 6 2022 Nikita Tokarchuk <nikita@tokarchuk> - 2.1-1
+- Adjusted for RH-based distros
+
 * Fri Sep 18 2020 Lars Ellenberg <lars.ellenberg@linbit.com> - 2.1-1
 - New upstream release
 
