@@ -83,11 +83,12 @@ fi
 %{_var}/lib/csync2
 %doc %{_mandir}/man1/csync2.1.gz
 %doc %{_docdir}/csync2/csync2.adoc
+%doc %{_docdir}/csync2/csync2-quickstart.adoc
 %doc %{_docdir}/csync2/ChangeLog
-%doc %{_docdir}/csync2/README
-%doc %{_docdir}/csync2/AUTHORS
-%config(noreplace) %{_sysconfdir}/xinetd.d/csync2
-%config(noreplace) %{_sysconfdir}/csync2.cfg
+%doc %{_docdir}/csync2/COPYING
+%doc %{_docdir}/csync2/README.adoc
+%doc %{_docdir}/csync2/AUTHORS.adoc
+%config(noreplace) %{_sysconfdir}/csync2/csync2.cfg
 
 %changelog
 * Fri Sep 18 2020 Lars Ellenberg <lars.ellenberg@linbit.com> - 2.1-1
