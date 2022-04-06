@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig
 BuildRequires:  sqlite-devel
 Requires:       openssl
 Requires:       sqlite
-%if 0%{?suse_version} >= 1210 || 0%{?rhel} >= 7
+%if 0%{?rhel} >= 7
 BuildRequires:  systemd
 %endif
 
@@ -42,7 +42,7 @@ It is expedient for HA-clusters, HPC-clusters, COWs and server farms.
 
 %prep
 %setup
-%{?suse_update_config:%{suse_update_config}}
+
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -I/usr/kerberos/include"
@@ -63,14 +63,10 @@ install -m 644 doc/csync2-quickstart.adoc %{buildroot}%{_docdir}/csync2/csync2-q
 [ "$RPM_BUILD_ROOT" != "/" ] && [ -d $RPM_BUILD_ROOT ] && rm -rf $RPM_BUILD_ROOT
 make clean
 
-%pre
-%service_add_pre csync2.socket
-
 %post
 if ! grep -q "^csync2" %{_sysconfdir}/services ; then
      echo "csync2          30865/tcp" >>%{_sysconfdir}/services
 fi
-%service_add_post csync2.socket
 
 %files
 %defattr(-,root,root)
