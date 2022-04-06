@@ -61,7 +61,7 @@ if ! [ -f configure ]; then ./autogen.sh; fi
 make %{?_smp_mflags}
 
 %install
-%makeinstall
+%make_install
 
 mkdir -p %{buildroot}%{_localstatedir}/lib/csync2
 install -m 644 doc/csync2.adoc %{buildroot}%{_docdir}/csync2/csync2.adoc
