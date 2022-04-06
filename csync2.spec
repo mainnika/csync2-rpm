@@ -5,6 +5,8 @@
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 
+%global         commit 83b36449abb4c2903ef3b40b46018240633989e0
+
 Summary:        Cluster synchronization tool
 License:        GPL-2.0-or-later
 Group:          Productivity/Clustering/HA
@@ -13,7 +15,7 @@ Name:           csync2
 Version:        2.1
 Release:        0rc1
 URL:            https://github.com/LINBIT/csync2#readme
-Source0:        https://github.com/LINBIT/csync2/archive/83b36449abb4c2903ef3b40b46018240633989e0.tar.gz
+Source0:        https://github.com/LINBIT/csync2/archive/%{commit}.tar.gz
 Patch1:         0001-build-use-mariadb-libraries-as-a-mysql-connector.patch
 
 BuildRequires:  autoconf
@@ -48,7 +50,7 @@ much more than just 2 hosts, handle file deletions and can detect conflicts.
 It is expedient for HA-clusters, HPC-clusters, COWs and server farms.
 
 %prep
-%setup
+%setup -n %{name}-%{commit}
 
 %autopatch -p1
 
