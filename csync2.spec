@@ -14,6 +14,7 @@ Version: 2.1
 Release: 0rc1
 URL:            https://github.com/LINBIT/csync2#readme
 Source0:        %{name}-%{version}-%{release}.tar.gz
+Patch1:         0001-build-use-mariadb-libraries-as-a-mysql-connector.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -49,6 +50,7 @@ It is expedient for HA-clusters, HPC-clusters, COWs and server farms.
 %prep
 %setup
 
+%autopatch -p1
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -I/usr/kerberos/include"
